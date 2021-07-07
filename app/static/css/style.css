@@ -68,7 +68,7 @@ main {
 .card-auth {
 	width: 400px;
 	border: 0;
-	border-radius: 1rem;
+	border-radius: 20rem;
 	box-shadow: 0 0.2rem 0.2rem 0 rgba(0, 0, 0, 0.1);
 }
 

@@ -9,7 +9,7 @@ from allauth.account import views
 
 
 
-class ProfileView(View):
+class ProfileView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         user_data = CustomUser.objects.get(id=request.user.id)
 
@@ -17,7 +17,7 @@ class ProfileView(View):
             'user_data': user_data,
         })
 
-class ProfileEditView(View):
+class ProfileEditView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         user_data = CustomUser.objects.get(id=request.user.id)
         form = ProfileForm(
@@ -65,9 +65,3 @@ class SignupView(views.SignupView):
     form_class = SignupUserForm
 
 
-class ProfileView(LoginRequiredMixin, View):
-    def get(self, request, *args, **kwargs):
-
-
-class ProfileEditView(LoginRequiredMixin, View):
-    def get(self, request, *args, **kwargs):
